@@ -62,10 +62,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AddNote.xaml">
+	  <MauiXaml Update="NoteManagment\AddNote.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="EditNote.xaml">
+	  <MauiXaml Update="NoteManagment\EditNote.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -73,5 +73,15 @@
 	<ItemGroup>
 	  <Folder Include="Resources\Images\" />
 	</ItemGroup>
+
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+		<AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyStore>C:\Users\felix\Desktop\Keystore\notes.keystore</AndroidSigningKeyStore>
+		<AndroidSigningStorePass>KstAL46</AndroidSigningStorePass>
+		<AndroidSigningKeyAlias>AlexF99</AndroidSigningKeyAlias>
+		<AndroidSigningKeyPass>KstAL46</AndroidSigningKeyPass>
+	</PropertyGroup>
+
 
 </Project>

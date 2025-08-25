@@ -3,13 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NotesApp.MainPage">
     <Grid>
-        <ScrollView Margin="50">
-            <VerticalStackLayout>
+        <ScrollView Margin="10">
+            <VerticalStackLayout x:Name="noteLayout">
+                
+                
+                <Border Stroke="Black">
+                    <Grid>
+                        <Label Text="Notes" WidthRequest="210" HorizontalOptions="Start" LineBreakMode="WordWrap" VerticalOptions="Center"  Margin="10" FontAttributes="Bold" />
+                        <Button Text="Delete" HorizontalOptions="End" Margin="5" BackgroundColor="Red" TextColor="Black"/>
+                        <Button Text="Edit" HorizontalOptions="Center" Margin="130 , 5, 5, 5" Background="Blue"/>
+                    </Grid>
+                </Border>
+                
                 
             </VerticalStackLayout>
         </ScrollView>
-
-        <Button Text="add Note" VerticalOptions="End" Margin="10" Clicked="onAddNote" BackgroundColor="Black"/>
+        <Button Text="add Note" VerticalOptions="End" Margin="10" Clicked="onAddNote" BackgroundColor="{AppThemeBinding Light=black, Dark=white}"/>
+        
     </Grid>
 
 </ContentPage>

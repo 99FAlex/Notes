@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotesApp.EditNote"
+             Title="EditNote">
+
+    <Shell.TitleView>
+        <Grid>
+            <Label FontSize="Medium" Text="Edit Note" VerticalOptions="Start" HorizontalOptions="Start" FontAttributes="Bold" Margin="10"/>
+            <Button Text="Edit" Clicked="editNote" HeightRequest="45" WidthRequest="60" HorizontalOptions="End"  Margin="10" BackgroundColor="{AppThemeBinding Light=black, Dark=white}" />
+        </Grid>
+    </Shell.TitleView>
+    <VerticalStackLayout>
+        <Entry x:Name="noteName" Placeholder="Name" Margin="10"/>
+
+        <Editor x:Name="note" Placeholder="Notes" AutoSize="TextChanges" HeightRequest="710" Margin="10" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
